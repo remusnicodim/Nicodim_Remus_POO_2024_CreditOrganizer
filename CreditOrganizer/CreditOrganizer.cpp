@@ -5,7 +5,7 @@ using namespace System;
 
 int main(array<System::String ^> ^args)
 {
-    Console::Write("Card name is ");
+    /*Console::Write("Card name is ");
     Console::WriteLine(CreditCardAccount::name);
     int n = CreditCardAccount::GetNumberOfAccounts();
     Console::Write("Number of accounts initially: ");
@@ -22,5 +22,17 @@ int main(array<System::String ^> ^args)
     account2->PrintStatement();
     n = CreditCardAccount::GetNumberOfAccounts();
     Console::Write("\nNumber of accounts now: ");
-    Console::WriteLine(n);
+    Console::WriteLine(n);*/
+
+    Console::WriteLine("Creating account object");
+    CreditCardAccount^ account1;
+    account1 = gcnew CreditCardAccount(12345, 2000);
+    Console::WriteLine("\nMaking a purchase (300)");
+    account1->MakePurchase(300);
+    Console::WriteLine("\nMaking a purchase (700)");
+    account1->MakePurchase(700);
+    Console::WriteLine("\nMaking a purchase (500)");
+    account1->MakePurchase(500);
+    Console::WriteLine("\nRedeeming points");
+    account1->RedeemLoyaltyPoints();
 }
